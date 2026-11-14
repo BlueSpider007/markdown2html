@@ -80,6 +80,10 @@ static std::string heading(const std::string &line) {
         text = text.substr(0, end);
     }
 
+    if (!text.empty() && text.find_first_not_of('#') == std::string::npos) {
+        text.clear();
+    }
+
     while (!text.empty() && is_ws(text.back())) {
         text.pop_back();
     }
