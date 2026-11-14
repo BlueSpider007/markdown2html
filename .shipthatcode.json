@@ -1,0 +1,90 @@
+{
+  "course": "build-markdown-parser",
+  "language": "cpp",
+  "language_id": 1054,
+  "entrypoint": "main.cpp",
+  "version": 1,
+  "content_hash": "f7fb97e71dadd9e9",
+  "lessons": [
+    {
+      "slug": "headings",
+      "tests_hash": "fb90aaa883ac"
+    },
+    {
+      "slug": "paragraphs",
+      "tests_hash": "710fcc9226eb"
+    },
+    {
+      "slug": "setext-headings",
+      "tests_hash": "cc07c14958ac"
+    },
+    {
+      "slug": "emphasis",
+      "tests_hash": "74e3e18a72a1"
+    },
+    {
+      "slug": "delimiter-stack",
+      "tests_hash": "c76f97fb51a5"
+    },
+    {
+      "slug": "links",
+      "tests_hash": "59b0841706c8"
+    },
+    {
+      "slug": "autolinks",
+      "tests_hash": "8f0ad9d636d3"
+    },
+    {
+      "slug": "reference-style-links",
+      "tests_hash": "7454f46f2a4f"
+    },
+    {
+      "slug": "lists",
+      "tests_hash": "dfce25cc2490"
+    },
+    {
+      "slug": "code",
+      "tests_hash": "536702810f4f"
+    },
+    {
+      "slug": "blockquotes",
+      "tests_hash": "025fec1c1c5d"
+    },
+    {
+      "slug": "tight-vs-loose-lists",
+      "tests_hash": "a9f79f9c5256"
+    },
+    {
+      "slug": "nested-containers",
+      "tests_hash": "6841b0248beb"
+    },
+    {
+      "slug": "html-escape",
+      "tests_hash": "7dc3b518314c"
+    },
+    {
+      "slug": "backslash-escapes",
+      "tests_hash": "33a6953ccb9d"
+    },
+    {
+      "slug": "raw-html",
+      "tests_hash": "6787197e52a5"
+    },
+    {
+      "slug": "extensions",
+      "tests_hash": "dd8a440dcdd0"
+    },
+    {
+      "slug": "full-md",
+      "tests_hash": "4676f705c149"
+    },
+    {
+      "slug": "gfm-tables",
+      "tests_hash": "fab5986a6526"
+    },
+    {
+      "slug": "two-phase-parser-architecture",
+      "tests_hash": "99d2e96952a2"
+    }
+  ]
+}

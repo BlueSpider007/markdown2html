@@ -1,0 +1,6 @@
+<h1>Heading</h1>
+<p>Text with <code>code</code> and <a href="http://x">link</a>.</p>
+<ul>
+<li>item 1</li>
+<li>item 2</li>
+</ul>
