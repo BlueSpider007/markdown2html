@@ -91,10 +91,66 @@ static std::string heading(const std::string &line) {
            std::to_string(level) + ">";
 }
 
+// para holds the raw lines of one paragraph; return the text of its <p> block.
+static std::string paragraph(const std::vector<std::string> &para) {
+    std::string out = "<p>";
+    for (size_t idx = 0; idx < para.size(); idx++) {
+        std::string text = para[idx];
+        size_t start = 0;
+        while (start < text.size() && is_ws(text[start]))
+            start++;
+        text = text.substr(start);
+        bool more = idx + 1 < para.size();
+        bool hard = false;
+        size_t n = text.size();
+        if (more && n >= 2 && text[n - 1] == ' ' && text[n - 2] == ' ') {
+            hard = true;
+        } else if (more && n >= 1 && text[n - 1] == '\\') {
+            hard = true;
+            text.erase(n - 1);
+        }
+        size_t end = text.size();
+        while (end > 0 && is_ws(text[end - 1]))
+            end--;
+        out += text.substr(0, end);
+        if (more)
+            out += hard ? "<br />\n" : " ";
+    }
+    out += "</p>";
+    return out;
+}
+
+// Return the output blocks for these input lines.
+static std::vector<std::string> render(const std::vector<std::string> &lines) {
+    std::vector<std::string> out;
+    std::vector<std::string> para;
+
+    for (const std::string &line : lines) {
+        bool blank = true;
+
+        for (char c : line) {
+            if (!is_ws(c)) {
+                blank = false;
+                break;
+            }
+        }
+
+        if (blank) {
+            if (!para.empty()) {
+                out.push_back(paragraph(para));
+                para.clear();
+            }
+        } else {
+            para.push_back(line);
+        }
+    }
+    if (!para.empty()) {
+        out.push_back(paragraph(para));
+    }
+    return out;
+}
+
 int main() {
-    std::vector<std::string> lines = read_lines();
-    for (size_t i = 0; i < lines.size(); i++)
-        lines[i] = heading(lines[i]);
-    write_lines(lines);
+    write_lines(render(read_lines()));
     return 0;
 }
